@@ -2,39 +2,119 @@
 #include <stdlib.h>
 #include <assert.h>
 
-void Swap(const char** a, const char** b);
-int strcmp(const char* s1, const char* s2);
-void bubble_sort(const char* str[], int n);
+void Swap_strings(char** string_1, char** string_2);
+int strcmp(char* string_1, char* string_2);
+void bubble_sort(char* text[], int n);
 int num_of_symbols_in_file(const char* filename);
 int num_of_strings_in_file(const char* filename);
 int max_strlen_of_file(const char* filename);
 void read_file_to_buffer(const char* filename, int fsize, char* buffer);
+//void read_text_from_buffer(char* buffer, char** strings);
 
-int main()
+int main(int argc, char* argv[])
 {
-    const char* file_name = "onegin.txt";
-    FILE* outputfile = fopen("oneginoutput.txt", "w");
-    // FILE* inputfile = fopen("onegin.txt", "r");
-    int colvo1 = num_of_strings_in_file("onegin.txt");
-    int colvo2 = max_strlen_of_file("onegin.txt");
-    printf("There are %d strings\n", colvo1);
-    printf("Max length of strings is %d\n\n", colvo2);
+    if (argc != 1)
+    {
+        for (int i = 1; i < argc; i++)
+        {
+            printf("%s\n", argv[i]);
+        }
+        return 1;
+    }
+    const char* input_file_name = "onegin.txt";
+    //FILE* outputfile = fopen("oneginoutput.txt", "w");
+    //FILE* inputfile = fopen("onegin.txt", "r");
 
-    char* text = (char*)calloc(colvo1 * colvo2, sizeof(char));
+    int str_num = num_of_strings_in_file(input_file_name);
+    int max_str_len = max_strlen_of_file(input_file_name);
+    int filesize = num_of_symbols_in_file(input_file_name);
+
+    printf("There are %d strings\n", str_num);
+    printf("Max length of strings is %d\n\n", max_str_len);
+
+    //char* buffer = (char*)calloc(max_fsize, sizeof(char));
+    char* buffer = (char*)calloc(filesize + 200, sizeof(char));
+
+    read_file_to_buffer(input_file_name, filesize, buffer);
+
+    //fprintf(outputfile, "%s", buffer);
+    printf("%s\n", buffer);
+
+    char** strings = (char**)calloc(str_num+400, sizeof(char*));
+    size_t* strlen = (size_t*)calloc(str_num, sizeof(size_t));
+
+    int k = 0;
+    int m = 0;
+    for (int i = 0; i < filesize; i++)
+    {
+        m++;
+        if (buffer[i] == '\n' ||  buffer[i] == '\0' || buffer[i] == EOF)
+        {
+            strlen[k] = m - 1;
+            k++;
+            m = 0;
+        }
+    }
+
+    for (int i = 0; i < str_num; i++)
+    {
+        printf("%d ", strlen[i]);
+    }
+    printf("\n");
+
+    printf("%d\n\n", str_num);
+
+    strings[0] = &buffer[0];
+    int j = 1;
+    for (int i = 1; i < filesize; i++)
+    {
+        if (buffer[i] == '\n')
+        {
+            assert(j < str_num);
+            strings[j] = &buffer[i + 1];
+            j++;
+        }
+    }
+
+    for (int i = 0; i < str_num; i++)
+    {
+        for (size_t j = 0; j < strlen[i]; j++)
+        {
+            printf("%c", strings[i][j]);
+        }
+        printf("\n");
+    }
+    printf("\n");
+
+    bubble_sort(strings, str_num);
+
+    for (int i = 0; i < str_num; i++)
+    {
+        for (size_t j = 0; j < strlen[i]; j++)
+        {
+            printf("%c", strings[i][j]);
+        }
+        printf("\n");
+    }
+    printf("\n");
 
 
-    int fsize = num_of_symbols_in_file(file_name);
-    read_file_to_buffer("onegin.txt", fsize, text);
+    /*
+    strings[0] = &buffer[0];
+    int j = 1;
+    for (int i = 1; i < str_num; i++)
+    {
+        while (buffer[j] != '\n' && buffer[j] != '\0' && buffer[j] != EOF)
+        {
+            j++;
+        }
+        strings[i] = &buffer[j + 1];
+    }
+    */
 
-    fprintf(outputfile, "%s", text);
-    printf("%s", text);
-
-
-    free(text);
-
-
-
-
+    free(strlen);
+    free(buffer);
+    free(strings);
 
     /*char str[colvo1][colvo2];
     int num = 0;
@@ -69,7 +149,7 @@ int main()
     /*for (int i = 0; i < colvo1; i++)
     {
         int j = 0;
-        while (str[i][j] != '\n' or str[i][j] != EOF)
+        while (str[i][j] != '\n' || str[i][j] != EOF)
         {
             printf("%c", str[i][j]);
             j++;
@@ -85,7 +165,7 @@ int main()
     {
         int symbol_num = 0;
         int ch = getc(inputfile);
-        while(ch != '\n' and ch != EOF)
+        while(ch != '\n' && ch != EOF)
         {
             str[num][symbol_num] = ch;
             symbol_num++;
@@ -97,7 +177,6 @@ int main()
             break;
         }
     }
-
 
     int n = sizeof(str) / sizeof(str[0]);
     fprintf(outputfile, "Original Text:\n\n");
@@ -118,25 +197,25 @@ int main()
     }*/
 
     //fclose(inputfile);
-    fclose(outputfile);
+    //fclose(outputfile);
     return 0;
 }
 
-void Swap(const char** a, const char** b)
+void Swap_strings(char** string_1, char** string_2)
 {
-    const char* temp = *a;
-    *a = *b;
-    *b = temp;
+    char* temp = *string_1;
+    *string_1 = *string_2;
+    *string_2 = temp;
 }
 
-int strcmp(const char* s1, const char* s2)
+int strcmp(char* string_1, char* string_2)
 {
-    int i = 0;
-    while (s1[i] != '\0' or s2[i] != '\0')
+    int number_of_symbol = 0;
+    while (string_1[number_of_symbol] != '\0' || string_2[number_of_symbol] != '\0')
     {
-        if (s1[i] != s2[i])
+        if (string_1[number_of_symbol] != string_2[number_of_symbol])
         {
-            if (s1[i] > s2[i])
+            if (string_1[number_of_symbol] > string_2[number_of_symbol])
             {
                 return 1;
             }
@@ -145,23 +224,23 @@ int strcmp(const char* s1, const char* s2)
                 return -1;
             }
         }
-        i++;
+        number_of_symbol++;
     }
     return 0;
 }
 
-/*void bubble_sort(char* str[], int n) {
+void bubble_sort(char* text[], int n) {
     for (int i = 0; i < n - 1; i++)
     {
         for (int j = 0; j < n - i - 1; j++)
         {
-            if (strcmp(str[j], str[j + 1]) > 0)
+            if (strcmp(text[j], text[j + 1]) > 0)
             {
-                Swap(&str[j], &str[j + 1]);
+                Swap_strings(&text[j], &text[j + 1]);
             }
         }
     }
-}*/
+}
 
 int num_of_symbols_in_file(const char* filename)
 {
@@ -229,4 +308,19 @@ void read_file_to_buffer(const char* filename, int fsize, char* buffer)
         fclose(fptr);
     }
 }
-
+/*
+void read_text_from_buffer(char* buffer, char** strings)
+{
+    int n = sizeof(buffer);
+    int num_of_string = 0;
+    int i = 0;
+    while (true)
+    {
+        int num_of_sym = 0;
+        while (*(buffer + i) != '\n')
+        {
+            *(strings + num_of_string) = *(buffer + i);
+        }
+    }
+}
+*/
