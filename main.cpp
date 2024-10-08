@@ -5,9 +5,9 @@
 void Swap_strings(char** string_1, char** string_2);
 int strcmp(char* string_1, char* string_2);
 void bubble_sort(char* text[], int n);
-int num_of_symbols_in_file(const char* filename);
-int num_of_strings_in_file(const char* filename);
-int max_strlen_of_file(const char* filename);
+size_t num_of_symbols_in_file(const char* filename);
+size_t num_of_strings_in_file(const char* filename);
+size_t max_strlen_of_file(const char* filename);
 void read_file_to_buffer(const char* filename, int fsize, char* buffer);
 //void read_text_from_buffer(char* buffer, char** strings);
 
@@ -25,9 +25,9 @@ int main(int argc, char* argv[])
     //FILE* outputfile = fopen("oneginoutput.txt", "w");
     //FILE* inputfile = fopen("onegin.txt", "r");
 
-    int str_num = num_of_strings_in_file(input_file_name);
-    int max_str_len = max_strlen_of_file(input_file_name);
-    int filesize = num_of_symbols_in_file(input_file_name);
+    size_t str_num = num_of_strings_in_file(input_file_name);
+    size_t max_str_len = max_strlen_of_file(input_file_name);
+    size_t filesize = num_of_symbols_in_file(input_file_name);
 
     printf("There are %d strings\n", str_num);
     printf("Max length of strings is %d\n\n", max_str_len);
@@ -43,20 +43,20 @@ int main(int argc, char* argv[])
     char** strings = (char**)calloc(str_num+400, sizeof(char*));
     size_t* strlen = (size_t*)calloc(str_num, sizeof(size_t));
 
-    int k = 0;
-    int m = 0;
-    for (int i = 0; i < filesize; i++)
+    int num_str = 0;
+    int count_sym = 0;
+    for (size_t i = 0; i < filesize; i++)
     {
-        m++;
+        count_sym++;
         if (buffer[i] == '\n' ||  buffer[i] == '\0' || buffer[i] == EOF)
         {
-            strlen[k] = m - 1;
-            k++;
-            m = 0;
+            strlen[num_str] = count_sym - 1;
+            num_str++;
+            count_sym = 0;
         }
     }
 
-    for (int i = 0; i < str_num; i++)
+    for (size_t i = 0; i < str_num; i++)
     {
         printf("%d ", strlen[i]);
     }
@@ -65,20 +65,20 @@ int main(int argc, char* argv[])
     printf("%d\n\n", str_num);
 
     strings[0] = &buffer[0];
-    int j = 1;
-    for (int i = 1; i < filesize; i++)
+    size_t j = 1;
+    for (size_t i = 1; i < filesize; i++)
     {
         if (buffer[i] == '\n')
         {
-            assert(j < str_num);
+            //assert(j < str_num);
             strings[j] = &buffer[i + 1];
             j++;
         }
     }
 
-    for (int i = 0; i < str_num; i++)
+    for (size_t i = 0; i < str_num; i++)
     {
-        for (size_t j = 0; j < strlen[i]; j++)
+        for (j = 0; j < strlen[i]; j++)
         {
             printf("%c", strings[i][j]);
         }
@@ -88,9 +88,9 @@ int main(int argc, char* argv[])
 
     bubble_sort(strings, str_num);
 
-    for (int i = 0; i < str_num; i++)
+    for (size_t i = 0; i < str_num; i++)
     {
-        for (size_t j = 0; j < strlen[i]; j++)
+        for (j = 0; j < strlen[i]; j++)
         {
             printf("%c", strings[i][j]);
         }
@@ -242,7 +242,7 @@ void bubble_sort(char* text[], int n) {
     }
 }
 
-int num_of_symbols_in_file(const char* filename)
+size_t num_of_symbols_in_file(const char* filename)
 {
     assert(filename != NULL);
     FILE *fp = fopen(filename, "r");
@@ -255,7 +255,7 @@ int num_of_symbols_in_file(const char* filename)
     return counter;
 }
 
-int num_of_strings_in_file(const char* filename)
+size_t num_of_strings_in_file(const char* filename)
 {
     assert(filename != NULL);
     FILE *fp = fopen(filename, "r");
@@ -273,7 +273,7 @@ int num_of_strings_in_file(const char* filename)
     return counter;
 }
 
-int max_strlen_of_file(const char* filename)
+size_t max_strlen_of_file(const char* filename)
 {
     assert(filename != NULL);
     FILE *fp = fopen(filename, "r");
