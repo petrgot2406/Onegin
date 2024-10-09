@@ -4,10 +4,10 @@
 #include "Input.h"
 #include "Output.h"
 
-void Print_lines(char** lines, size_t* lineslen, TheInputFile input_file)
+void Print_lines(char** lines, size_t* lineslen, TheInputFile input_file, FILE* output_file)
 {
-    const char* output_file_name = "oneginoutput.txt";
-    FILE* output_file = fopen(output_file_name, "w");
+    //const char* output_file_name = "oneginoutput.txt";
+    //FILE* output_file = fopen(output_file_name, "w");
 
     for (size_t i = 0; i < input_file.str_num; i++)
     {
@@ -21,5 +21,5 @@ void Print_lines(char** lines, size_t* lineslen, TheInputFile input_file)
     }
     fprintf(output_file, "\n");
     printf("\n");
-    fclose(output_file);
+    //fclose(output_file);
 }

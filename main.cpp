@@ -26,19 +26,19 @@ int main()
 
     fprintf(output_file, "Original text:\n\n");
     printf("Original text:\n\n");
-    Print_lines(lines, lineslen, input_file);
+    Print_lines(lines, lineslen, input_file, output_file);
 
     Bubble_sort(lines, lineslen, input_file);
 
     fprintf(output_file, "Sorted text 1:\n\n");
     printf("Sorted text 1:\n\n");
-    Print_lines(lines, lineslen, input_file);
+    Print_lines(lines, lineslen, input_file, output_file);
 
     Bubble_sort_reverse(lines, lineslen, input_file);
 
     fprintf(output_file, "Sorted text 2:\n\n");
     printf("Sorted text 2:\n\n");
-    Print_lines(lines, lineslen, input_file);
+    Print_lines(lines, lineslen, input_file, output_file);
 
     free(buffer);
     free(lines);
