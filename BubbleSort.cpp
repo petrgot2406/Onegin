@@ -27,6 +27,16 @@ bool IsLetter(char symbol)
     return false;
 }
 
+size_t length_of_the_string(char* string)
+{
+    size_t counter = 0;
+    while (string[counter] != '\0' && string[counter] != '\n' && string[counter] != EOF)
+    {
+        counter++;
+    }
+    return counter;
+}
+
 int strcmp(char* string_1, char* string_2)
 {
     int number_of_symbol_1 = 0;
@@ -64,7 +74,45 @@ int strcmp(char* string_1, char* string_2)
     return 0;
 }
 
-void Bubble_sort(char** strings, size_t* strlen, TheInputFile input_file) {
+int strcmp_reverse(char* string_1, char* string_2)
+{
+    int number_of_symbol_1 = length_of_the_string(string_1);
+    int number_of_symbol_2 = length_of_the_string(string_2);
+    while (number_of_symbol_1 >= 0 && number_of_symbol_2 >= 0)
+    {
+        start_comparing_symbols:
+
+        if (not(IsLetter(string_1[number_of_symbol_1])))
+        {
+            number_of_symbol_1--;
+            goto start_comparing_symbols;
+        }
+
+        if (not(IsLetter(string_2[number_of_symbol_2])))
+        {
+            number_of_symbol_2--;
+            goto start_comparing_symbols;
+        }
+
+        if (string_1[number_of_symbol_1] != string_2[number_of_symbol_2])
+        {
+            if (string_1[number_of_symbol_1] > string_2[number_of_symbol_2])
+            {
+                return 1;
+            }
+            else
+            {
+                return -1;
+            }
+        }
+        number_of_symbol_1--;
+        number_of_symbol_2--;
+    }
+    return 0;
+}
+
+void Bubble_sort(char** strings, size_t* strlen, TheInputFile input_file)
+{
     for (size_t i = 0; i < input_file.str_num - 1; i++)
     {
         for (size_t j = 0; j < input_file.str_num - i - 1; j++)
@@ -77,3 +125,19 @@ void Bubble_sort(char** strings, size_t* strlen, TheInputFile input_file) {
         }
     }
 }
+
+void Bubble_sort_reverse(char** strings, size_t* strlen, TheInputFile input_file)
+{
+    for (size_t i = 0; i < input_file.str_num - 1; i++)
+    {
+        for (size_t j = 0; j < input_file.str_num - i - 1; j++)
+        {
+            if (strcmp_reverse(strings[j], strings[j + 1]) > 0)
+            {
+                Swap_strings(&strings[j], &strings[j + 1]);
+                Swap_size_t(&strlen[j], &strlen[j + 1]);
+            }
+        }
+    }
+}
+

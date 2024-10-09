@@ -39,7 +39,12 @@ int main(int argc, char* argv[])
 
     Bubble_sort(strings, strlen, input_file);
 
-    printf("Sorted text:\n\n");
+    printf("Sorted text 1:\n\n");
+    Print_strings(strings, strlen, input_file);
+
+    Bubble_sort_reverse(strings, strlen, input_file);
+
+    printf("Sorted text 2:\n\n");
     Print_strings(strings, strlen, input_file);
 
     free(buffer);
