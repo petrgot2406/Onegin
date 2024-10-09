@@ -33,14 +33,20 @@ int strcmp(char* string_1, char* string_2)
     int number_of_symbol_2 = 0;
     while (string_1[number_of_symbol_1] != '\0' || string_2[number_of_symbol_2] != '\0')
     {
+        start_comparing_symbols:
+
         if (not(IsLetter(string_1[number_of_symbol_1])))
         {
             number_of_symbol_1++;
+            goto start_comparing_symbols;
         }
+
         if (not(IsLetter(string_2[number_of_symbol_2])))
         {
             number_of_symbol_2++;
+            goto start_comparing_symbols;
         }
+
         if (string_1[number_of_symbol_1] != string_2[number_of_symbol_2])
         {
             if (string_1[number_of_symbol_1] > string_2[number_of_symbol_2])
