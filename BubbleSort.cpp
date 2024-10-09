@@ -20,7 +20,7 @@ void Swap_strings(char** string_1, char** string_2)
 
 bool IsLetter(char symbol)
 {
-    if (symbol >= 'a' && symbol <= 'z' || symbol >= 'A' && symbol <= 'Z')
+    if ((symbol >= 'a' && symbol <= 'z') || (symbol >= 'A' && symbol <= 'Z'))
     {
         return true;
     }
