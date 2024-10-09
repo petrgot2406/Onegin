@@ -10,19 +10,22 @@ struct TheInputFile
     size_t max_str_len;
 };
 
+//BubbleSort.h BubbleSort.cpp
 void Swap_strings(char** string_1, char** string_2);
 int strcmp(char* string_1, char* string_2);
 void Bubble_sort(char** strings, TheInputFile input_file);
 
+//InputFile.h InputFile.cpp
 size_t num_of_symbols_in_file(TheInputFile input_file);
 size_t num_of_strings_in_file(TheInputFile input_file);
 size_t max_strlen_of_file(TheInputFile input_file);
-
 void Read_file_to_buffer(TheInputFile input_file, char* buffer);
 void Put_strlen_for_all_strings(char* buffer, TheInputFile input_file, size_t* strlen);
 void Put_pointers_to_strings(char* buffer, TheInputFile input_file, char** strings);
 
+//Output.h Output.cpp
 void Print_strings(char** strings, size_t* strlen, TheInputFile input_file);
+
 //void read_text_from_buffer(char* buffer, char** strings);
 
 int main(int argc, char* argv[])
