@@ -11,14 +11,14 @@ struct TheInputFile
 
 void Swap_strings(char** string_1, char** string_2);
 int strcmp(char* string_1, char* string_2);
-void bubble_sort(char** strings, TheInputFile input_file);
+void Bubble_sort(char** strings, TheInputFile input_file);
 size_t num_of_symbols_in_file(TheInputFile input_file);
 size_t num_of_strings_in_file(TheInputFile input_file);
 size_t max_strlen_of_file(TheInputFile input_file);
-void read_file_to_buffer(TheInputFile input_file, char* buffer);
-void put_strlen_for_all_strings(char* buffer, TheInputFile input_file, size_t* strlen);
-void put_pointers_to_strings(char* buffer, TheInputFile input_file, char** strings);
-void print_strings(char** strings, size_t* strlen, TheInputFile input_file);
+void Read_file_to_buffer(TheInputFile input_file, char* buffer);
+void Put_strlen_for_all_strings(char* buffer, TheInputFile input_file, size_t* strlen);
+void Put_pointers_to_strings(char* buffer, TheInputFile input_file, char** strings);
+void Print_strings(char** strings, size_t* strlen, TheInputFile input_file);
 //void read_text_from_buffer(char* buffer, char** strings);
 
 int main(int argc, char* argv[])
@@ -49,12 +49,12 @@ int main(int argc, char* argv[])
     size_t max_str_len = max_strlen_of_file(input_file);
     printf("Max length of strings is %d\n", max_str_len);
 
-    read_file_to_buffer(input_file, buffer);
+    Read_file_to_buffer(input_file, buffer);
 
     //fprintf(outputfile, "%s", buffer);
     //printf("%s\n", buffer);
 
-    put_strlen_for_all_strings(buffer, input_file, strlen);
+    Put_strlen_for_all_strings(buffer, input_file, strlen);
 
     for (size_t i = 0; i < input_file.str_num; i++)
     {
@@ -62,15 +62,15 @@ int main(int argc, char* argv[])
     }
     printf("\n");
 
-    put_pointers_to_strings(buffer, input_file, strings);
+    Put_pointers_to_strings(buffer, input_file, strings);
 
     printf("Original text:\n");
-    print_strings(strings, strlen, input_file);
+    Print_strings(strings, strlen, input_file);
 
-    bubble_sort(strings, input_file);
+    Bubble_sort(strings, input_file);
 
     printf("Sorted text:\n");
-    print_strings(strings, strlen, input_file);
+    Print_strings(strings, strlen, input_file);
 
     free(strlen);
     free(buffer);
@@ -109,7 +109,7 @@ int strcmp(char* string_1, char* string_2)
     return 0;
 }
 
-void bubble_sort(char** strings, TheInputFile input_file) {
+void Bubble_sort(char** strings, TheInputFile input_file) {
     for (size_t i = 0; i < input_file.str_num - 1; i++)
     {
         for (size_t j = 0; j < input_file.str_num - i - 1; j++)
@@ -177,7 +177,7 @@ size_t max_strlen_of_file(TheInputFile input_file)
     return max_counter;
 }
 
-void read_file_to_buffer(TheInputFile input_file, char* buffer)
+void Read_file_to_buffer(TheInputFile input_file, char* buffer)
 {
     assert(buffer != NULL);
     assert(input_file.input_file_name != NULL);
@@ -189,7 +189,7 @@ void read_file_to_buffer(TheInputFile input_file, char* buffer)
     }
 }
 
-void put_strlen_for_all_strings(char* buffer, TheInputFile input_file, size_t* strlen)
+void Put_strlen_for_all_strings(char* buffer, TheInputFile input_file, size_t* strlen)
 {
     size_t num_of_the_str = 0;
     size_t count_sym_in_str = 0;
@@ -205,7 +205,7 @@ void put_strlen_for_all_strings(char* buffer, TheInputFile input_file, size_t* s
     }
 }
 
-void put_pointers_to_strings(char* buffer, TheInputFile input_file, char** strings)
+void Put_pointers_to_strings(char* buffer, TheInputFile input_file, char** strings)
 {
     size_t num_of_the_str = 1;
     strings[0] = &buffer[0];
@@ -220,7 +220,7 @@ void put_pointers_to_strings(char* buffer, TheInputFile input_file, char** strin
     }
 }
 
-void print_strings(char** strings, size_t* strlen, TheInputFile input_file)
+void Print_strings(char** strings, size_t* strlen, TheInputFile input_file)
 {
     for (size_t i = 0; i < input_file.str_num; i++)
     {
