@@ -7,14 +7,17 @@ struct TheInputFile
     const char* input_file_name;
     size_t file_size;
     size_t str_num;
+    size_t max_str_len;
 };
 
 void Swap_strings(char** string_1, char** string_2);
 int strcmp(char* string_1, char* string_2);
 void Bubble_sort(char** strings, TheInputFile input_file);
+
 size_t num_of_symbols_in_file(TheInputFile input_file);
 size_t num_of_strings_in_file(TheInputFile input_file);
 size_t max_strlen_of_file(TheInputFile input_file);
+
 void Read_file_to_buffer(TheInputFile input_file, char* buffer);
 void Put_strlen_for_all_strings(char* buffer, TheInputFile input_file, size_t* strlen);
 void Put_pointers_to_strings(char* buffer, TheInputFile input_file, char** strings);
@@ -34,7 +37,8 @@ int main(int argc, char* argv[])
 
     struct TheInputFile input_file = {"onegin.txt",
                                       num_of_symbols_in_file(input_file),
-                                      num_of_strings_in_file(input_file)};
+                                      num_of_strings_in_file(input_file),
+                                      max_strlen_of_file(input_file)};
 
     //FILE* outputfile = fopen("oneginoutput.txt", "w");
     //FILE* inputfile = fopen("onegin.txt", "r");
@@ -46,8 +50,7 @@ int main(int argc, char* argv[])
     size_t* strlen = (size_t*)calloc(input_file.str_num, sizeof(size_t));
 
     printf("There are %d strings\n", input_file.str_num);
-    size_t max_str_len = max_strlen_of_file(input_file);
-    printf("Max length of strings is %d\n", max_str_len);
+    printf("Max length of strings is %d\n", input_file.max_str_len);
 
     Read_file_to_buffer(input_file, buffer);
 
