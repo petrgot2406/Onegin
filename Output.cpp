@@ -11,11 +11,8 @@ void Print_lines(char** lines, size_t* lineslen, TheInputFile input_file, FILE* 
         for (size_t j = 0; j < lineslen[i]; j++)
         {
             fprintf(output_file, "%c", lines[i][j]);
-            printf("%c", lines[i][j]);
         }
         fprintf(output_file, "\n");
-        printf("\n");
     }
     fprintf(output_file, "\n");
-    printf("\n");
 }

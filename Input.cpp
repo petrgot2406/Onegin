@@ -36,7 +36,7 @@ size_t num_of_strings_in_file(TheInputFile input_file)
 
 void Put_file_characteristics_to_structure(TheInputFile* input_file)
 {
-    input_file->input_file_name = "onegin.txt";
+    input_file->input_file_name = "textInput.txt";
     input_file->file_size = num_of_symbols_in_file(*input_file);
     input_file->str_num = num_of_strings_in_file(*input_file);
 }

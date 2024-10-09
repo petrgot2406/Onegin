@@ -7,7 +7,7 @@
 
 int main()
 {
-    const char* output_file_name = "oneginoutput.txt";
+    const char* output_file_name = "textOutput.txt";
     FILE* output_file = fopen(output_file_name, "w");
 
     struct TheInputFile input_file = {};
@@ -19,31 +19,27 @@ int main()
     size_t* lineslen = (size_t*)calloc(input_file.str_num, sizeof(size_t));
 
     Read_file_to_buffer(input_file, buffer);
-
     Put_lineslen_for_all_lines(buffer, input_file, lineslen);
-
     Put_pointers_to_lines(buffer, input_file, lines);
 
     fprintf(output_file, "Original text:\n\n");
-    printf("Original text:\n\n");
     Print_lines(lines, lineslen, input_file, output_file);
 
     Bubble_sort(lines, lineslen, input_file);
 
     fprintf(output_file, "Sorted text 1:\n\n");
-    printf("Sorted text 1:\n\n");
     Print_lines(lines, lineslen, input_file, output_file);
 
     Bubble_sort_reverse(lines, lineslen, input_file);
 
     fprintf(output_file, "Sorted text 2:\n\n");
-    printf("Sorted text 2:\n\n");
     Print_lines(lines, lineslen, input_file, output_file);
+
+    fclose(output_file);
 
     free(buffer);
     free(lines);
     free(lineslen);
 
-    fclose(output_file);
     return 0;
 }
