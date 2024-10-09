@@ -40,11 +40,6 @@ int main(int argc, char* argv[])
     //FILE* outputfile = fopen("oneginoutput.txt", "w");
     //FILE* inputfile = fopen("onegin.txt", "r");
 
-    /*
-    size_t str_num = num_of_strings_in_file(input_file.input_file_name);
-    size_t file_size = num_of_symbols_in_file(input_file.input_file_name);
-    */
-
     //size_t max_fsize = str_num * max_str_len;
     //char* buffer = (char*)calloc(max_fsize, sizeof(char));
     char* buffer = (char*)calloc(input_file.file_size, sizeof(char));
