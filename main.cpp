@@ -26,7 +26,7 @@ int main(int argc, char* argv[])
     size_t* strlen = (size_t*)calloc(input_file.str_num, sizeof(size_t));
 
     printf("There are %d strings\n", input_file.str_num);
-    printf("Max length of strings is %d\n", input_file.max_str_len);
+    printf("Max length of strings is %d\n\n", input_file.max_str_len);
 
     Read_file_to_buffer(input_file, buffer);
 
@@ -34,17 +34,17 @@ int main(int argc, char* argv[])
 
     Put_pointers_to_strings(buffer, input_file, strings);
 
-    printf("Original text:\n");
+    printf("Original text:\n\n");
     Print_strings(strings, strlen, input_file);
 
     Bubble_sort(strings, strlen, input_file);
 
-    printf("Sorted text:\n");
+    printf("Sorted text:\n\n");
     Print_strings(strings, strlen, input_file);
 
-    free(strlen);
     free(buffer);
     free(strings);
+    free(strlen);
 
     return 0;
 }
