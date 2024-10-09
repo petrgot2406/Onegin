@@ -32,11 +32,10 @@ int main(int argc, char* argv[])
         return 1;
     }
 
-    struct TheInputFile input_file = {};
+    struct TheInputFile input_file = {"onegin.txt",
+                                      num_of_symbols_in_file(input_file),
+                                      num_of_strings_in_file(input_file)};
 
-    input_file.input_file_name = "onegin.txt";
-    input_file.str_num = num_of_strings_in_file(input_file);
-    input_file.file_size = num_of_symbols_in_file(input_file);
     //FILE* outputfile = fopen("oneginoutput.txt", "w");
     //FILE* inputfile = fopen("onegin.txt", "r");
 
