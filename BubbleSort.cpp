@@ -11,7 +11,7 @@ void Swap_size_t(size_t* n1, size_t* n2)
     *n2 = temp;
 }
 
-void Swap_strings(char** string_1, char** string_2)
+void Swap_lines(char** string_1, char** string_2)
 {
     char* temp = *string_1;
     *string_1 = *string_2;
@@ -111,31 +111,32 @@ int strcmp_reverse(char* string_1, char* string_2)
     return 0;
 }
 
-void Bubble_sort(char** strings, size_t* strlen, TheInputFile input_file)
+void Bubble_sort(char** lines, size_t* lineslen, TheInputFile input_file)
 {
     for (size_t i = 0; i < input_file.str_num - 1; i++)
     {
         for (size_t j = 0; j < input_file.str_num - i - 1; j++)
         {
             if (strcmp(strings[j], strings[j + 1]) > 0)
+            if (strcmp(lines[j], lines[j + 1]) > 0)
             {
-                Swap_strings(&strings[j], &strings[j + 1]);
-                Swap_size_t(&strlen[j], &strlen[j + 1]);
+                Swap_lines(&lines[j], &lines[j + 1]);
+                Swap_size_t(&lineslen[j], &lineslen[j + 1]);
             }
         }
     }
 }
 
-void Bubble_sort_reverse(char** strings, size_t* strlen, TheInputFile input_file)
+void Bubble_sort_reverse(char** lines, size_t* lineslen, TheInputFile input_file)
 {
     for (size_t i = 0; i < input_file.str_num - 1; i++)
     {
         for (size_t j = 0; j < input_file.str_num - i - 1; j++)
         {
-            if (strcmp_reverse(strings[j], strings[j + 1]) > 0)
+            if (strcmp_reverse(lines[j], lines[j + 1]) > 0)
             {
-                Swap_strings(&strings[j], &strings[j + 1]);
-                Swap_size_t(&strlen[j], &strlen[j + 1]);
+                Swap_lines(&lines[j], &lines[j + 1]);
+                Swap_size_t(&lineslen[j], &lineslen[j + 1]);
             }
         }
     }

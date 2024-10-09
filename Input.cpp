@@ -34,28 +34,11 @@ size_t num_of_strings_in_file(TheInputFile input_file)
     return counter;
 }
 
-size_t max_strlen_of_file(TheInputFile input_file)
+void Put_file_characteristics_to_structure(TheInputFile* input_file)
 {
-    assert(input_file.input_file_name != NULL);
-    FILE *fptr = fopen(input_file.input_file_name, "r");
-    size_t max_counter = 0;
-    size_t counter = 0;
-    int ch = getc(fptr);
-    while (ch != EOF)
-    {
-        counter++;
-        if (ch == '\n')
-        {
-            if (counter > max_counter)
-            {
-                max_counter = counter;
-            }
-            counter = 0;
-        }
-        ch = getc(fptr);
-    }
-    fclose(fptr);
-    return max_counter;
+    input_file->input_file_name = "onegin.txt";
+    input_file->file_size = num_of_symbols_in_file(*input_file);
+    input_file->str_num = num_of_strings_in_file(*input_file);
 }
 
 void Read_file_to_buffer(TheInputFile input_file, char* buffer)
@@ -70,7 +53,7 @@ void Read_file_to_buffer(TheInputFile input_file, char* buffer)
     }
 }
 
-void Put_strlen_for_all_strings(char* buffer, TheInputFile input_file, size_t* strlen)
+void Put_lineslen_for_all_lines(char* buffer, TheInputFile input_file, size_t* lineslen)
 {
     size_t num_of_the_str = 0;
     size_t count_sym_in_str = 0;
@@ -79,23 +62,23 @@ void Put_strlen_for_all_strings(char* buffer, TheInputFile input_file, size_t* s
         count_sym_in_str++;
         if (buffer[i] == '\n' ||  buffer[i] == '\0' || buffer[i] == EOF)
         {
-            strlen[num_of_the_str] = count_sym_in_str - 1;
+            lineslen[num_of_the_str] = count_sym_in_str - 1;
             num_of_the_str++;
             count_sym_in_str = 0;
         }
     }
 }
 
-void Put_pointers_to_strings(char* buffer, TheInputFile input_file, char** strings)
+void Put_pointers_to_lines(char* buffer, TheInputFile input_file, char** lines)
 {
     size_t num_of_the_str = 1;
-    strings[0] = &buffer[0];
+    lines[0] = &buffer[0];
     for (size_t i = 1; i < input_file.file_size; i++)
     {
         if (buffer[i] == '\n')
         {
             assert(num_of_the_str <= input_file.str_num);
-            strings[num_of_the_str] = &buffer[i + 1];
+            lines[num_of_the_str] = &buffer[i + 1];
             num_of_the_str++;
         }
     }

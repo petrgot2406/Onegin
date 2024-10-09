@@ -1,6 +1,6 @@
 #ifndef OUTPUT
 #define OUTPUT
 
-void Print_strings(char** strings, size_t* strlen, TheInputFile input_file);
+void Print_lines(char** lines, size_t* lineslen, TheInputFile input_file);
 
 #endif

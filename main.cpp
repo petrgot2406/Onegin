@@ -5,51 +5,45 @@
 #include "BubbleSort.h"
 #include "Output.h"
 
-int main(int argc, char* argv[])
+int main()
 {
-    if (argc != 1)
-    {
-        for (int i = 1; i < argc; i++)
-        {
-            printf("%s\n", argv[i]);
-        }
-        return 1;
-    }
+    const char* output_file_name = "oneginoutput.txt";
+    FILE* output_file = fopen(output_file_name, "w");
 
-    struct TheInputFile input_file = {"onegin.txt",
-                                      num_of_symbols_in_file(input_file),
-                                      num_of_strings_in_file(input_file),
-                                      max_strlen_of_file(input_file)};
+    struct TheInputFile input_file = {};
+
+    Put_file_characteristics_to_structure(&input_file);
 
     char* buffer = (char*)calloc(input_file.file_size, sizeof(char));
-    char** strings = (char**)calloc(input_file.str_num + 1, sizeof(char*));
-    size_t* strlen = (size_t*)calloc(input_file.str_num, sizeof(size_t));
-
-    printf("There are %d strings\n", input_file.str_num);
-    printf("Max length of strings is %d\n\n", input_file.max_str_len);
+    char** lines = (char**)calloc(input_file.str_num + 1, sizeof(char*));
+    size_t* lineslen = (size_t*)calloc(input_file.str_num, sizeof(size_t));
 
     Read_file_to_buffer(input_file, buffer);
 
-    Put_strlen_for_all_strings(buffer, input_file, strlen);
+    Put_lineslen_for_all_lines(buffer, input_file, lineslen);
 
-    Put_pointers_to_strings(buffer, input_file, strings);
+    Put_pointers_to_lines(buffer, input_file, lines);
 
+    fprintf(output_file, "Original text:\n\n");
     printf("Original text:\n\n");
-    Print_strings(strings, strlen, input_file);
+    Print_lines(lines, lineslen, input_file);
 
-    Bubble_sort(strings, strlen, input_file);
+    Bubble_sort(lines, lineslen, input_file);
 
+    fprintf(output_file, "Sorted text 1:\n\n");
     printf("Sorted text 1:\n\n");
-    Print_strings(strings, strlen, input_file);
+    Print_lines(lines, lineslen, input_file);
 
-    Bubble_sort_reverse(strings, strlen, input_file);
+    Bubble_sort_reverse(lines, lineslen, input_file);
 
+    fprintf(output_file, "Sorted text 2:\n\n");
     printf("Sorted text 2:\n\n");
-    Print_strings(strings, strlen, input_file);
+    Print_lines(lines, lineslen, input_file);
 
     free(buffer);
-    free(strings);
-    free(strlen);
+    free(lines);
+    free(lineslen);
 
+    fclose(output_file);
     return 0;
 }
