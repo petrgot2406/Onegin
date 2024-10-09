@@ -51,7 +51,7 @@ int main(int argc, char* argv[])
     printf("Original text:\n");
     Print_strings(strings, strlen, input_file);
 
-    Bubble_sort(strings, input_file);
+    Bubble_sort(strings, strlen, input_file);
 
     printf("Sorted text:\n");
     Print_strings(strings, strlen, input_file);
