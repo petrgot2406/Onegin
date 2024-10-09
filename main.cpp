@@ -21,11 +21,6 @@ int main(int argc, char* argv[])
                                       num_of_strings_in_file(input_file),
                                       max_strlen_of_file(input_file)};
 
-    //FILE* outputfile = fopen("oneginoutput.txt", "w");
-    //FILE* inputfile = fopen("onegin.txt", "r");
-
-    //size_t max_fsize = str_num * max_str_len;
-    //char* buffer = (char*)calloc(max_fsize, sizeof(char));
     char* buffer = (char*)calloc(input_file.file_size, sizeof(char));
     char** strings = (char**)calloc(input_file.str_num + 1, sizeof(char*));
     size_t* strlen = (size_t*)calloc(input_file.str_num, sizeof(size_t));
@@ -35,16 +30,7 @@ int main(int argc, char* argv[])
 
     Read_file_to_buffer(input_file, buffer);
 
-    //fprintf(outputfile, "%s", buffer);
-    //printf("%s\n", buffer);
-
     Put_strlen_for_all_strings(buffer, input_file, strlen);
-
-    for (size_t i = 0; i < input_file.str_num; i++)
-    {
-        printf("%d ", strlen[i]);
-    }
-    printf("\n");
 
     Put_pointers_to_strings(buffer, input_file, strings);
 
@@ -60,7 +46,5 @@ int main(int argc, char* argv[])
     free(buffer);
     free(strings);
 
-    //fclose(inputfile);
-    //fclose(outputfile);
     return 0;
 }
