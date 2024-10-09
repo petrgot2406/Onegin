@@ -117,7 +117,6 @@ void Bubble_sort(char** lines, size_t* lineslen, TheInputFile input_file)
     {
         for (size_t j = 0; j < input_file.str_num - i - 1; j++)
         {
-            if (strcmp(strings[j], strings[j + 1]) > 0)
             if (strcmp(lines[j], lines[j + 1]) > 0)
             {
                 Swap_lines(&lines[j], &lines[j + 1]);
