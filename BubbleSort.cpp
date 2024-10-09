@@ -18,14 +18,32 @@ void Swap_strings(char** string_1, char** string_2)
     *string_2 = temp;
 }
 
+bool IsLetter(char symbol)
+{
+    if (symbol >= 'a' && symbol <= 'z' || symbol >= 'A' && symbol <= 'Z')
+    {
+        return true;
+    }
+    return false;
+}
+
 int strcmp(char* string_1, char* string_2)
 {
-    int number_of_symbol = 0;
-    while (string_1[number_of_symbol] != '\0' || string_2[number_of_symbol] != '\0')
+    int number_of_symbol_1 = 0;
+    int number_of_symbol_2 = 0;
+    while (string_1[number_of_symbol_1] != '\0' || string_2[number_of_symbol_2] != '\0')
     {
-        if (string_1[number_of_symbol] != string_2[number_of_symbol])
+        if (not(IsLetter(string_1[number_of_symbol_1])))
         {
-            if (string_1[number_of_symbol] > string_2[number_of_symbol])
+            number_of_symbol_1++;
+        }
+        if (not(IsLetter(string_2[number_of_symbol_2])))
+        {
+            number_of_symbol_2++;
+        }
+        if (string_1[number_of_symbol_1] != string_2[number_of_symbol_2])
+        {
+            if (string_1[number_of_symbol_1] > string_2[number_of_symbol_2])
             {
                 return 1;
             }
@@ -34,7 +52,8 @@ int strcmp(char* string_1, char* string_2)
                 return -1;
             }
         }
-        number_of_symbol++;
+        number_of_symbol_1++;
+        number_of_symbol_2++;
     }
     return 0;
 }
