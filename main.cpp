@@ -21,6 +21,7 @@ size_t max_strlen_of_file(TheInputFile input_file);
 void Read_file_to_buffer(TheInputFile input_file, char* buffer);
 void Put_strlen_for_all_strings(char* buffer, TheInputFile input_file, size_t* strlen);
 void Put_pointers_to_strings(char* buffer, TheInputFile input_file, char** strings);
+
 void Print_strings(char** strings, size_t* strlen, TheInputFile input_file);
 //void read_text_from_buffer(char* buffer, char** strings);
 
