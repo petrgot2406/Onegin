@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>
-#include "Input.h"
+#include "Struct.h"
 #include "Output.h"
 
 void Print_lines(char** lines, size_t* lineslen, TheInputFile input_file, FILE* output_file)

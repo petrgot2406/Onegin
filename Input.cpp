@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>
+#include "Struct.h"
 #include "Input.h"
 
 size_t num_of_symbols_in_file(TheInputFile input_file)

@@ -1,6 +1,8 @@
 #ifndef BUBBLE_SORT
 #define BUBBLE_SORT
 
+#include "Struct.h"
+
 void Swap_size_t(size_t* n1, size_t* n2);
 void Swap_lines(char** line_1, char** line_2);
 bool IsLetter(char symbol);

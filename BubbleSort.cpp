@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>
-#include "Input.h"
+#include "Struct.h"
 #include "BubbleSort.h"
 
 void Swap_size_t(size_t* n1, size_t* n2)

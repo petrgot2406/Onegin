@@ -1,12 +1,7 @@
 #ifndef INPUT
 #define INPUT
 
-struct TheInputFile
-{
-    const char* input_file_name;
-    size_t file_size;
-    size_t str_num;
-};
+#include "Struct.h"
 
 size_t num_of_symbols_in_file(TheInputFile input_file);
 size_t num_of_strings_in_file(TheInputFile input_file);
