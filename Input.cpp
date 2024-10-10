@@ -71,6 +71,7 @@ void Put_lineslen_for_all_lines(char* buffer, TheInputFile input_file, size_t* l
 
 void Put_pointers_to_lines(char* buffer, TheInputFile input_file, char** lines)
 {
+    assert(lines != NULL && buffer != NULL);
     size_t num_of_the_str = 1;
     lines[0] = &buffer[0];
     for (size_t i = 1; i < input_file.file_size; i++)
