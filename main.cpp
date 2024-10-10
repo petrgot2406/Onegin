@@ -19,8 +19,8 @@ int main()
     size_t* lineslen = (size_t*)calloc(input_file.str_num, sizeof(size_t));
 
     Read_file_to_buffer(input_file, buffer);
-    Put_lineslen_for_all_lines(buffer, input_file, lineslen);
     Put_pointers_to_lines(buffer, input_file, lines);
+    Put_lineslen_for_all_lines(buffer, input_file, lineslen);
 
     fprintf(output_file, "Original text:\n\n");
     Print_lines(lines, lineslen, input_file, output_file);
