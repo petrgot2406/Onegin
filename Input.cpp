@@ -55,6 +55,8 @@ void Read_file_to_buffer(TheInputFile input_file, char* buffer)
 
 void Put_lineslen_for_all_lines(char* buffer, TheInputFile input_file, size_t* lineslen)
 {
+    assert(buffer != NULL);
+    assert(lineslen != NULL);
     size_t num_of_the_str = 0;
     size_t count_sym_in_str = 0;
     for (size_t i = 0; i < input_file.file_size; i++)
@@ -71,7 +73,8 @@ void Put_lineslen_for_all_lines(char* buffer, TheInputFile input_file, size_t* l
 
 void Put_pointers_to_lines(char* buffer, TheInputFile input_file, char** lines)
 {
-    assert(lines != NULL && buffer != NULL);
+    assert(lines != NULL);
+    assert(buffer != NULL);
     size_t num_of_the_str = 1;
     lines[0] = &buffer[0];
     for (size_t i = 1; i < input_file.file_size; i++)

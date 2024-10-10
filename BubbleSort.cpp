@@ -109,7 +109,8 @@ int strcmp_reverse(char* string_1, char* string_2)
 
 void Bubble_sort(char** lines, size_t* lineslen, TheInputFile input_file)
 {
-    assert(lines != NULL && input_file.input_file_name != NULL);
+    assert(lines != NULL);
+    assert(input_file.input_file_name != NULL);
     for (size_t i = 0; i < input_file.str_num - 1; i++)
     {
         for (size_t j = 0; j < input_file.str_num - i - 1; j++)
@@ -125,7 +126,8 @@ void Bubble_sort(char** lines, size_t* lineslen, TheInputFile input_file)
 
 void Bubble_sort_reverse(char** lines, size_t* lineslen, TheInputFile input_file)
 {
-    assert(lines != NULL && input_file.input_file_name != NULL);
+    assert(lines != NULL);
+    assert(input_file.input_file_name != NULL);
     for (size_t i = 0; i < input_file.str_num - 1; i++)
     {
         for (size_t j = 0; j < input_file.str_num - i - 1; j++)
