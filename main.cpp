@@ -14,20 +14,20 @@ int main()
 
     struct Text the_text {};
 
-    Put_inputfile_to_structure(&the_text.original_text, &the_text.sorted_text);
+    Put_inputfile_to_structure(&the_text);
 
     fprintf(output_file, "Original text:\n\n");
-    Print_lines(the_text.original_text, the_text.sorted_text, output_file);
+    Print_lines(the_text, output_file);
 
-    Bubble_sort(the_text.original_text, &the_text.sorted_text);
+    Bubble_sort(&the_text);
 
     fprintf(output_file, "Sorted text 1:\n\n");
-    Print_lines(the_text.original_text, the_text.sorted_text, output_file);
+    Print_lines(the_text, output_file);
 
-    Bubble_sort_reverse(the_text.original_text, &the_text.sorted_text);
+    Bubble_sort_reverse(&the_text);
 
     fprintf(output_file, "Sorted text 2:\n\n");
-    Print_lines(the_text.original_text, the_text.sorted_text, output_file);
+    Print_lines(the_text, output_file);
 
     fclose(output_file);
 
