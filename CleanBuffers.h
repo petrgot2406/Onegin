@@ -1,5 +1,5 @@
-#ifndef CLEAN_BUFFERS
-#define CLEAN_BUFFERS
+#ifndef CLEANBUFFERS_H
+#define CLEANBUFFERS_H
 
 #include "Struct.h"
 

@@ -1,5 +1,5 @@
-#ifndef STRUCT
-#define STRUCT
+#ifndef STRUCT_H
+#define STRUCT_H
 
 struct TextOrig
 {

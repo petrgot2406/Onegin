@@ -1,5 +1,5 @@
-#ifndef OUTPUT
-#define OUTPUT
+#ifndef OUTPUT_H
+#define OUTPUT_H
 
 #include "Struct.h"
 

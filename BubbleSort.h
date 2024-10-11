@@ -1,5 +1,5 @@
-#ifndef BUBBLE_SORT
-#define BUBBLE_SORT
+#ifndef BUBBLESORT_H
+#define BUBBLESORT_H
 
 #include "Struct.h"
 

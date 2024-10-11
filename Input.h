@@ -1,5 +1,5 @@
-#ifndef INPUT
-#define INPUT
+#ifndef INPUT_H
+#define INPUT_H
 
 #include "Struct.h"
 
