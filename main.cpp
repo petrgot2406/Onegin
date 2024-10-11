@@ -31,7 +31,7 @@ int main()
 
     fclose(output_file);
 
-    Free_all(the_text);
+    Free_all_buffers(the_text);
 
     return 0;
 }

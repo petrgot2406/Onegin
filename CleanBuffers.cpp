@@ -4,7 +4,7 @@
 #include "Struct.h"
 #include "CleanBuffers.h"
 
-void Free_all(Text the_text)
+void Free_all_buffers(Text the_text)
 {
     assert(the_text.original_text.buffer != NULL);
     assert(the_text.sorted_text.lines != NULL);

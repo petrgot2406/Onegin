@@ -3,6 +3,6 @@
 
 #include "Struct.h"
 
-void Free_all(Text the_text);
+void Free_all_buffers(Text the_text);
 
 #endif
