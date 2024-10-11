@@ -69,7 +69,9 @@ void Put_lineslen_for_all_lines(TextOrig original_text, TextSort* sorted_text)
     for (size_t i = 0; i < original_text.file_size; i++)
     {
         count_sym_in_str++;
-        if (original_text.buffer[i] == '\n' ||  original_text.buffer[i] == '\0' || original_text.buffer[i] == EOF)
+        if (original_text.buffer[i] == '\n' ||
+            original_text.buffer[i] == '\0' ||
+            original_text.buffer[i] == EOF)
         {
             sorted_text->lineslen[num_of_the_str] = count_sym_in_str - 1;
             num_of_the_str++;
