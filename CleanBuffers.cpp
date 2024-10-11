@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <assert.h>
 #include "Struct.h"
+#include "CleanBuffers.h"
 
 void Free_all(Text the_text)
 {
