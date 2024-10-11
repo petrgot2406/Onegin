@@ -9,12 +9,12 @@
 
 int main()
 {
-    const char* output_file_name = "textOutput.txt";
-    FILE* output_file = fopen(output_file_name, "w");
-
-    struct Text the_text {};
+    struct Text the_text = {};
 
     Put_inputfile_to_structure(&the_text);
+
+    const char* output_file_name = "textOutput.txt";
+    FILE* output_file = fopen(output_file_name, "w");
 
     fprintf(output_file, "Original text:\n\n");
     Print_lines(the_text, output_file);

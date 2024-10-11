@@ -144,4 +144,3 @@ void Bubble_sort_reverse(Text* the_text)
         }
     }
 }
-
