@@ -14,11 +14,7 @@ int main()
 
     struct Text the_text {};
 
-    Put_file_characteristics_to_structure(&the_text.original_text);
-
-    Read_file_to_buffer(&the_text.original_text);
-    Put_lineslen_for_all_lines(the_text.original_text, &the_text.sorted_text);
-    Put_pointers_to_lines(the_text.original_text, &the_text.sorted_text);
+    Put_inputfile_to_structure(&the_text.original_text, &the_text.sorted_text);
 
     fprintf(output_file, "Original text:\n\n");
     Print_lines(the_text.original_text, the_text.sorted_text, output_file);
