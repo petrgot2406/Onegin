@@ -40,6 +40,7 @@ size_t length_of_the_string(char* string)
 int strcmp(char* string_1, char* string_2)
 {
     assert(string_1 != NULL && string_2 != NULL);
+
     int number_of_symbol_1 = 0;
     int number_of_symbol_2 = 0;
     while (string_1[number_of_symbol_1] != '\0' || string_2[number_of_symbol_2] != '\0')
@@ -75,6 +76,7 @@ int strcmp(char* string_1, char* string_2)
 int strcmp_reverse(char* string_1, char* string_2)
 {
     assert(string_1 != NULL && string_2 != NULL);
+
     int number_of_symbol_1 = length_of_the_string(string_1);
     int number_of_symbol_2 = length_of_the_string(string_2);
     while (number_of_symbol_1 >= 0 && number_of_symbol_2 >= 0)
@@ -109,8 +111,9 @@ int strcmp_reverse(char* string_1, char* string_2)
 
 void Bubble_sort(TextOrig original_text, TextSort* sorted_text)
 {
-    //assert(lines != NULL);
-    //assert(input_file.input_file_name != NULL);
+    assert(original_text.input_file_name != NULL);
+    assert(sorted_text->lines != NULL);
+
     for (size_t i = 0; i < original_text.str_num - 1; i++)
     {
         for (size_t j = 0; j < original_text.str_num - i - 1; j++)
@@ -126,8 +129,9 @@ void Bubble_sort(TextOrig original_text, TextSort* sorted_text)
 
 void Bubble_sort_reverse(TextOrig original_text, TextSort* sorted_text)
 {
-    //assert(lines != NULL);
-    //assert(input_file.input_file_name != NULL);
+    assert(original_text.input_file_name != NULL);
+    assert(sorted_text->lines != NULL);
+
     for (size_t i = 0; i < original_text.str_num - 1; i++)
     {
         for (size_t j = 0; j < original_text.str_num - i - 1; j++)

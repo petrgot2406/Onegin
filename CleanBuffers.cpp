@@ -6,6 +6,10 @@
 
 void Free_all(Text the_text)
 {
+    assert(the_text.original_text.buffer != NULL);
+    assert(the_text.sorted_text.lines != NULL);
+    assert(the_text.sorted_text.lineslen != NULL);
+
     free(the_text.original_text.buffer);
     free(the_text.sorted_text.lines);
     free(the_text.sorted_text.lineslen);
