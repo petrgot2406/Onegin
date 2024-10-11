@@ -49,6 +49,7 @@ void Read_file_to_buffer(TextOrig* original_text)
     assert(original_text->input_file_name != NULL);
 
     original_text->buffer = (char*)calloc(original_text->file_size, sizeof(char));
+
     FILE* fptr = fopen(original_text->input_file_name, "r");
     if (fptr)
     {
@@ -62,6 +63,7 @@ void Put_lineslen_for_all_lines(TextOrig original_text, TextSort* sorted_text)
     assert(original_text.buffer != NULL);
 
     sorted_text->lineslen = (size_t*)calloc(original_text.str_num, sizeof(size_t));
+
     size_t num_of_the_str = 0;
     size_t count_sym_in_str = 0;
     for (size_t i = 0; i < original_text.file_size; i++)
@@ -81,6 +83,7 @@ void Put_pointers_to_lines(TextOrig original_text, TextSort* sorted_text)
     assert(original_text.buffer != NULL);
 
     sorted_text->lines = (char**)calloc(original_text.str_num + 1, sizeof(char*));
+
     size_t num_of_the_str = 1;
     sorted_text->lines[0] = &original_text.buffer[0];
     for (size_t i = 1; i < original_text.file_size; i++)
