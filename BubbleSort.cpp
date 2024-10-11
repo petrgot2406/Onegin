@@ -18,19 +18,19 @@ void Swap_lines(char** string_1, char** string_2)
     *string_2 = temp;
 }
 
-bool IsLetter(char symbol)
+bool IsLetter(char the_symbol)
 {
-    if ((symbol >= 'a' && symbol <= 'z') || (symbol >= 'A' && symbol <= 'Z'))
+    if ((the_symbol >= 'a' && the_symbol <= 'z') || (the_symbol >= 'A' && the_symbol <= 'Z'))
     {
         return true;
     }
     return false;
 }
 
-size_t length_of_the_string(char* string)
+size_t length_of_the_string(char* the_string)
 {
     size_t counter = 0;
-    while (string[counter] != '\0' && string[counter] != '\n' && string[counter] != EOF)
+    while (the_string[counter] != '\0' && the_string[counter] != '\n' && the_string[counter] != EOF)
     {
         counter++;
     }
