@@ -3,6 +3,6 @@
 
 #include "Struct.h"
 
-void Print_lines(char** lines, size_t* lineslen, TheInputFile input_file, FILE* output_file);
+void Print_lines(TextOrig original_text, TextSort sorted_text, FILE* output_file);
 
 #endif

@@ -107,35 +107,35 @@ int strcmp_reverse(char* string_1, char* string_2)
     return 0;
 }
 
-void Bubble_sort(char** lines, size_t* lineslen, TheInputFile input_file)
+void Bubble_sort(TextOrig original_text, TextSort* sorted_text)
 {
-    assert(lines != NULL);
-    assert(input_file.input_file_name != NULL);
-    for (size_t i = 0; i < input_file.str_num - 1; i++)
+    //assert(lines != NULL);
+    //assert(input_file.input_file_name != NULL);
+    for (size_t i = 0; i < original_text.str_num - 1; i++)
     {
-        for (size_t j = 0; j < input_file.str_num - i - 1; j++)
+        for (size_t j = 0; j < original_text.str_num - i - 1; j++)
         {
-            if (strcmp(lines[j], lines[j + 1]) > 0)
+            if (strcmp(sorted_text->lines[j], sorted_text->lines[j + 1]) > 0)
             {
-                Swap_lines(&lines[j], &lines[j + 1]);
-                Swap_size_t(&lineslen[j], &lineslen[j + 1]);
+                Swap_lines(&sorted_text->lines[j], &sorted_text->lines[j + 1]);
+                Swap_size_t(&sorted_text->lineslen[j], &sorted_text->lineslen[j + 1]);
             }
         }
     }
 }
 
-void Bubble_sort_reverse(char** lines, size_t* lineslen, TheInputFile input_file)
+void Bubble_sort_reverse(TextOrig original_text, TextSort* sorted_text)
 {
-    assert(lines != NULL);
-    assert(input_file.input_file_name != NULL);
-    for (size_t i = 0; i < input_file.str_num - 1; i++)
+    //assert(lines != NULL);
+    //assert(input_file.input_file_name != NULL);
+    for (size_t i = 0; i < original_text.str_num - 1; i++)
     {
-        for (size_t j = 0; j < input_file.str_num - i - 1; j++)
+        for (size_t j = 0; j < original_text.str_num - i - 1; j++)
         {
-            if (strcmp_reverse(lines[j], lines[j + 1]) > 0)
+            if (strcmp_reverse(sorted_text->lines[j], sorted_text->lines[j + 1]) > 0)
             {
-                Swap_lines(&lines[j], &lines[j + 1]);
-                Swap_size_t(&lineslen[j], &lineslen[j + 1]);
+                Swap_lines(&sorted_text->lines[j], &sorted_text->lines[j + 1]);
+                Swap_size_t(&sorted_text->lineslen[j], &sorted_text->lineslen[j + 1]);
             }
         }
     }

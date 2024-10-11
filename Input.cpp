@@ -4,10 +4,10 @@
 #include "Struct.h"
 #include "Input.h"
 
-size_t num_of_symbols_in_file(TheInputFile input_file)
+size_t num_of_symbols_in_file(TextOrig original_text)
 {
-    assert(input_file.input_file_name != NULL);
-    FILE *fptr = fopen(input_file.input_file_name, "r");
+    //assert(input_file.input_file_name != NULL);
+    FILE *fptr = fopen(original_text.input_file_name, "r");
     size_t counter = 0;
     while (getc(fptr) != EOF)
     {
@@ -17,10 +17,10 @@ size_t num_of_symbols_in_file(TheInputFile input_file)
     return counter;
 }
 
-size_t num_of_strings_in_file(TheInputFile input_file)
+size_t num_of_strings_in_file(TextOrig original_text)
 {
-    assert(input_file.input_file_name != NULL);
-    FILE *fptr = fopen(input_file.input_file_name, "r");
+    //assert(input_file.input_file_name != NULL);
+    FILE *fptr = fopen(original_text.input_file_name, "r");
     size_t counter = 0;
     int ch = getc(fptr);
     while (ch != EOF)
@@ -35,55 +35,58 @@ size_t num_of_strings_in_file(TheInputFile input_file)
     return counter;
 }
 
-void Put_file_characteristics_to_structure(TheInputFile* input_file)
+void Put_file_characteristics_to_structure(TextOrig* original_text)
 {
-    input_file->input_file_name = "textInput.txt";
-    input_file->file_size = num_of_symbols_in_file(*input_file);
-    input_file->str_num = num_of_strings_in_file(*input_file);
+    original_text->input_file_name = "textInput.txt";
+    original_text->file_size = num_of_symbols_in_file(*original_text);
+    original_text->str_num = num_of_strings_in_file(*original_text);
 }
 
-void Read_file_to_buffer(TheInputFile input_file, char* buffer)
+void Read_file_to_buffer(TextOrig* original_text)
 {
-    assert(buffer != NULL);
-    assert(input_file.input_file_name != NULL);
-    FILE* fptr = fopen(input_file.input_file_name, "r");
+    //assert(buffer != NULL);
+    //assert(input_file.input_file_name != NULL);
+    original_text->buffer = (char*)calloc(original_text->file_size, sizeof(char));
+    FILE* fptr = fopen(original_text->input_file_name, "r");
     if (fptr)
     {
-        fread(buffer, sizeof(char), input_file.file_size, fptr);
+        fread(original_text->buffer, sizeof(char), original_text->file_size, fptr);
         fclose(fptr);
     }
 }
 
-void Put_lineslen_for_all_lines(char* buffer, TheInputFile input_file, size_t* lineslen)
+void Put_lineslen_for_all_lines(TextOrig original_text, TextSort* sorted_text)
 {
-    assert(buffer != NULL);
-    assert(lineslen != NULL);
+    //assert(buffer != NULL);
+    //assert(lineslen != NULL);
+    sorted_text->lineslen = (size_t*)calloc(original_text.str_num, sizeof(size_t));
     size_t num_of_the_str = 0;
     size_t count_sym_in_str = 0;
-    for (size_t i = 0; i < input_file.file_size; i++)
+    for (size_t i = 0; i < original_text.file_size; i++)
     {
         count_sym_in_str++;
-        if (buffer[i] == '\n' ||  buffer[i] == '\0' || buffer[i] == EOF)
+        if (original_text.buffer[i] == '\n' ||  original_text.buffer[i] == '\0' || original_text.buffer[i] == EOF)
         {
-            lineslen[num_of_the_str] = count_sym_in_str - 1;
+            sorted_text->lineslen[num_of_the_str] = count_sym_in_str - 1;
             num_of_the_str++;
             count_sym_in_str = 0;
         }
     }
 }
 
-void Put_pointers_to_lines(char* buffer, TheInputFile input_file, char** lines)
+void Put_pointers_to_lines(TextOrig original_text, TextSort* sorted_text)
 {
-    assert(lines != NULL);
-    assert(buffer != NULL);
+    //assert(lines != NULL);
+    //assert(buffer != NULL);
+    sorted_text->lines = (char**)calloc(original_text.str_num + 1, sizeof(char*));
     size_t num_of_the_str = 1;
-    lines[0] = &buffer[0];
-    for (size_t i = 1; i < input_file.file_size; i++)
+    sorted_text->lines[0] = &original_text.buffer[0];
+    for (size_t i = 1; i < original_text.file_size; i++)
     {
-        if (buffer[i] == '\n')
+        if (original_text.buffer[i] == '\n')
         {
-            assert(num_of_the_str <= input_file.str_num);
-            lines[num_of_the_str] = &buffer[i + 1];
+            assert(num_of_the_str <= original_text.str_num);
+            sorted_text->lines[num_of_the_str] = &original_text.buffer[i + 1];
             num_of_the_str++;
         }
     }

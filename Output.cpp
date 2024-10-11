@@ -4,17 +4,17 @@
 #include "Struct.h"
 #include "Output.h"
 
-void Print_lines(char** lines, size_t* lineslen, TheInputFile input_file, FILE* output_file)
+void Print_lines(TextOrig original_text, TextSort sorted_text, FILE* output_file)
 {
-    assert(lines != NULL);
-    assert(lineslen != NULL);
-    assert(input_file.input_file_name != NULL);
-    assert(output_file != NULL);
-    for (size_t i = 0; i < input_file.str_num; i++)
+    //assert(lines != NULL);
+    //assert(lineslen != NULL);
+    //assert(input_file.input_file_name != NULL);
+    //assert(output_file != NULL);
+    for (size_t i = 0; i < original_text.str_num; i++)
     {
-        for (size_t j = 0; j < lineslen[i]; j++)
+        for (size_t j = 0; j < sorted_text.lineslen[i]; j++)
         {
-            fprintf(output_file, "%c", lines[i][j]);
+            fprintf(output_file, "%c", sorted_text.lines[i][j]);
         }
         fprintf(output_file, "\n");
     }
