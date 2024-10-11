@@ -48,21 +48,25 @@ void Read_file_to_buffer(TextOrig* original_text)
 {
     assert(original_text->input_file_name != NULL);
 
-    original_text->buffer = (char*)calloc(original_text->file_size, sizeof(char));
+    original_text->buffer = (char*)calloc(original_text->file_size,
+                                          sizeof(char));
 
     FILE* fptr = fopen(original_text->input_file_name, "r");
     if (fptr)
     {
-        fread(original_text->buffer, sizeof(char), original_text->file_size, fptr);
+        fread(original_text->buffer, sizeof(char),
+              original_text->file_size, fptr);
         fclose(fptr);
     }
 }
 
-void Put_lineslen_for_all_lines(TextOrig original_text, TextSort* sorted_text)
+void Put_lineslen_for_all_lines(TextOrig original_text,
+                                TextSort* sorted_text)
 {
     assert(original_text.buffer != NULL);
 
-    sorted_text->lineslen = (size_t*)calloc(original_text.str_num, sizeof(size_t));
+    sorted_text->lineslen = (size_t*)calloc(original_text.str_num,
+                                            sizeof(size_t));
 
     size_t num_of_the_str = 0;
     size_t count_sym_in_str = 0;
@@ -80,11 +84,13 @@ void Put_lineslen_for_all_lines(TextOrig original_text, TextSort* sorted_text)
     }
 }
 
-void Put_pointers_to_lines(TextOrig original_text, TextSort* sorted_text)
+void Put_pointers_to_lines(TextOrig original_text,
+                           TextSort* sorted_text)
 {
     assert(original_text.buffer != NULL);
 
-    sorted_text->lines = (char**)calloc(original_text.str_num + 1, sizeof(char*));
+    sorted_text->lines = (char**)calloc(original_text.str_num + 1,
+                                        sizeof(char*));
 
     size_t num_of_the_str = 1;
     sorted_text->lines[0] = &original_text.buffer[0];
@@ -103,7 +109,11 @@ void Put_pointers_to_lines(TextOrig original_text, TextSort* sorted_text)
 void Put_inputfile_to_structure(Text* the_text)
 {
     Put_file_characteristics_to_structure(&the_text->original_text);
+
     Read_file_to_buffer(&the_text->original_text);
-    Put_lineslen_for_all_lines(the_text->original_text, &the_text->sorted_text);
-    Put_pointers_to_lines(the_text->original_text, &the_text->sorted_text);
+
+    Put_lineslen_for_all_lines(the_text->original_text,
+                              &the_text->sorted_text);
+    Put_pointers_to_lines(the_text->original_text,
+                         &the_text->sorted_text);
 }
