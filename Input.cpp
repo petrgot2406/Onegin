@@ -79,7 +79,6 @@ void Put_lineslen_for_all_lines(TextOrig original_text, TextSort* sorted_text)
 void Put_pointers_to_lines(TextOrig original_text, TextSort* sorted_text)
 {
     assert(original_text.buffer != NULL);
-    //assert(sorted_text->lines != NULL);
 
     sorted_text->lines = (char**)calloc(original_text.str_num + 1, sizeof(char*));
     size_t num_of_the_str = 1;
