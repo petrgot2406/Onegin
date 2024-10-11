@@ -3,5 +3,5 @@ WINFLAGS = -Wshadow -Winit-self -Wredundant-decls -Wcast-align -Wundef -Wfloat-e
 CC = g++
 
 all:
-	$(CC) -c .\main.cpp .\Input.cpp .\BubbleSort.cpp .\Output.cpp $(WINFLAGS)
-	$(CC) .\main.o .\Input.o .\BubbleSort.o .\Output.o -o .\Onegin.exe
+	$(CC) -c .\main.cpp .\Input.cpp .\BubbleSort.cpp .\Output.cpp .\CleanBuffers.cpp $(WINFLAGS)
+	$(CC) .\main.o .\Input.o .\BubbleSort.o .\Output.o .\CleanBuffers.o -o .\Onegin.exe
