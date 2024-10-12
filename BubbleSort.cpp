@@ -141,27 +141,31 @@ void Bubble_sort(Text* the_text)
     {
         for (size_t j = 0; j < the_text->original_text.str_num - i - 1; j++)
         {
-            size_t n1 = 0;
-            size_t n2 = 1;
-            while (!IsThereLetters(the_text->sorted_text.lines[j + n1]) ||
-                   !IsThereLetters(the_text->sorted_text.lines[j + n2]))
+            size_t n_1 = 0;
+            size_t n_2 = 1;
+            while (!IsThereLetters(the_text->sorted_text.lines[j + n_1]) ||
+                   !IsThereLetters(the_text->sorted_text.lines[j + n_2]))
             {
-                if (!IsThereLetters(the_text->sorted_text.lines[j + n1]))
+                if (!IsThereLetters(the_text->sorted_text.lines[j + n_1]))
                 {
-                    n1++;
+                    n_1++;
                 }
-                if (!IsThereLetters(the_text->sorted_text.lines[j + n2]))
+                if (!IsThereLetters(the_text->sorted_text.lines[j + n_2]))
                 {
-                    n2++;
+                    n_2++;
                 }
             }
-            if (strcmp(the_text->sorted_text.lines[j + n1],
-                       the_text->sorted_text.lines[j + n2]) > 0)
+
+            assert(j + n_1 <= the_text->original_text.str_num - 1 &&
+                   j + n_2 <= the_text->original_text.str_num - 1);
+
+            if (strcmp(the_text->sorted_text.lines[j + n_1],
+                       the_text->sorted_text.lines[j + n_2]) > 0)
             {
-                Swap_lines(&the_text->sorted_text.lines[j + n1],
-                           &the_text->sorted_text.lines[j + n2]);
-                Swap_size_t(&the_text->sorted_text.lineslen[j + n1],
-                            &the_text->sorted_text.lineslen[j + n2]);
+                Swap_lines(&the_text->sorted_text.lines[j + n_1],
+                           &the_text->sorted_text.lines[j + n_2]);
+                Swap_size_t(&the_text->sorted_text.lineslen[j + n_1],
+                            &the_text->sorted_text.lineslen[j + n_2]);
             }
         }
     }
@@ -176,27 +180,31 @@ void Bubble_sort_reverse(Text* the_text)
     {
         for (size_t j = 0; j < the_text->original_text.str_num - i - 1; j++)
         {
-            size_t n1 = 0;
-            size_t n2 = 1;
-            while (!IsThereLetters(the_text->sorted_text.lines[j + n1]) ||
-                   !IsThereLetters(the_text->sorted_text.lines[j + n2]))
+            size_t n_1 = 0;
+            size_t n_2 = 1;
+            while (!IsThereLetters(the_text->sorted_text.lines[j + n_1]) ||
+                   !IsThereLetters(the_text->sorted_text.lines[j + n_2]))
             {
-                if (!IsThereLetters(the_text->sorted_text.lines[j + n1]))
+                if (!IsThereLetters(the_text->sorted_text.lines[j + n_1]))
                 {
-                    n1++;
+                    n_1++;
                 }
-                if (!IsThereLetters(the_text->sorted_text.lines[j + n2]))
+                if (!IsThereLetters(the_text->sorted_text.lines[j + n_2]))
                 {
-                    n2++;
+                    n_2++;
                 }
             }
-            if (strcmp_reverse(the_text->sorted_text.lines[j + n1],
-                               the_text->sorted_text.lines[j + n2]) > 0)
+
+            assert(j + n_1 <= the_text->original_text.str_num - 1 &&
+                   j + n_2 <= the_text->original_text.str_num - 1);
+
+            if (strcmp_reverse(the_text->sorted_text.lines[j + n_1],
+                               the_text->sorted_text.lines[j + n_2]) > 0)
             {
-                Swap_lines(&the_text->sorted_text.lines[j + n1],
-                           &the_text->sorted_text.lines[j + n2]);
-                Swap_size_t(&the_text->sorted_text.lineslen[j + n1],
-                            &the_text->sorted_text.lineslen[j + n2]);
+                Swap_lines(&the_text->sorted_text.lines[j + n_1],
+                           &the_text->sorted_text.lines[j + n_2]);
+                Swap_size_t(&the_text->sorted_text.lineslen[j + n_1],
+                            &the_text->sorted_text.lineslen[j + n_2]);
             }
         }
     }
