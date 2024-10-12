@@ -49,14 +49,14 @@ int strcmp(char* string_1, char* string_2)
     while (string_1[number_of_symbol_1] != '\0' ||
            string_2[number_of_symbol_2] != '\0')
     {
-        while (not(IsLetter(string_1[number_of_symbol_1])) ||
-               not(IsLetter(string_2[number_of_symbol_2])))
+        while (!IsLetter(string_1[number_of_symbol_1]) ||
+               !IsLetter(string_2[number_of_symbol_2]))
         {
-            if (not(IsLetter(string_1[number_of_symbol_1])))
+            if (!IsLetter(string_1[number_of_symbol_1]))
             {
                 number_of_symbol_1++;
             }
-            if (not(IsLetter(string_2[number_of_symbol_2])))
+            if (!IsLetter(string_2[number_of_symbol_2]))
             {
                 number_of_symbol_2++;
             }
@@ -86,14 +86,14 @@ int strcmp_reverse(char* string_1, char* string_2)
     int number_of_symbol_2 = length_of_the_string(string_2);
     while (number_of_symbol_1 >= 0 && number_of_symbol_2 >= 0)
     {
-        while (not(IsLetter(string_1[number_of_symbol_1])) ||
-               not(IsLetter(string_2[number_of_symbol_2])))
+        while (!IsLetter(string_1[number_of_symbol_1]) ||
+               !IsLetter(string_2[number_of_symbol_2]))
         {
-            if (not(IsLetter(string_1[number_of_symbol_1])))
+            if (!IsLetter(string_1[number_of_symbol_1]))
             {
                 number_of_symbol_1--;
             }
-            if (not(IsLetter(string_2[number_of_symbol_2])))
+            if (!IsLetter(string_2[number_of_symbol_2]))
             {
                 number_of_symbol_2--;
             }
@@ -124,13 +124,27 @@ void Bubble_sort(Text* the_text)
     {
         for (size_t j = 0; j < the_text->original_text.str_num - i - 1; j++)
         {
-            if (strcmp(the_text->sorted_text.lines[j],
-                       the_text->sorted_text.lines[j + 1]) > 0)
+            size_t n1 = 0;
+            size_t n2 = 1;
+            while (length_of_the_string(the_text->sorted_text.lines[j + n1]) <= 1 ||
+                   length_of_the_string(the_text->sorted_text.lines[j + n2]) <= 1)
             {
-                Swap_lines(&the_text->sorted_text.lines[j],
-                           &the_text->sorted_text.lines[j + 1]);
-                Swap_size_t(&the_text->sorted_text.lineslen[j],
-                            &the_text->sorted_text.lineslen[j + 1]);
+                if (length_of_the_string(the_text->sorted_text.lines[j + n1]) <= 1)
+                {
+                    n1++;
+                }
+                if (length_of_the_string(the_text->sorted_text.lines[j + n2]) <= 1)
+                {
+                    n2++;
+                }
+            }
+            if (strcmp(the_text->sorted_text.lines[j + n1],
+                       the_text->sorted_text.lines[j + n2]) > 0)
+            {
+                Swap_lines(&the_text->sorted_text.lines[j + n1],
+                           &the_text->sorted_text.lines[j + n2]);
+                Swap_size_t(&the_text->sorted_text.lineslen[j + n1],
+                            &the_text->sorted_text.lineslen[j + n2]);
             }
         }
     }
@@ -145,13 +159,27 @@ void Bubble_sort_reverse(Text* the_text)
     {
         for (size_t j = 0; j < the_text->original_text.str_num - i - 1; j++)
         {
-            if (strcmp_reverse(the_text->sorted_text.lines[j],
-                               the_text->sorted_text.lines[j + 1]) > 0)
+            size_t n1 = 0;
+            size_t n2 = 1;
+            while (length_of_the_string(the_text->sorted_text.lines[j + n1]) <= 1 ||
+                   length_of_the_string(the_text->sorted_text.lines[j + n2]) <= 1)
             {
-                Swap_lines(&the_text->sorted_text.lines[j],
-                           &the_text->sorted_text.lines[j + 1]);
-                Swap_size_t(&the_text->sorted_text.lineslen[j],
-                            &the_text->sorted_text.lineslen[j + 1]);
+                if (length_of_the_string(the_text->sorted_text.lines[j + n1]) <= 1)
+                {
+                    n1++;
+                }
+                if (length_of_the_string(the_text->sorted_text.lines[j + n2]) <= 1)
+                {
+                    n2++;
+                }
+            }
+            if (strcmp_reverse(the_text->sorted_text.lines[j + n1],
+                               the_text->sorted_text.lines[j + n2]) > 0)
+            {
+                Swap_lines(&the_text->sorted_text.lines[j + n1],
+                           &the_text->sorted_text.lines[j + n2]);
+                Swap_size_t(&the_text->sorted_text.lineslen[j + n1],
+                            &the_text->sorted_text.lineslen[j + n2]);
             }
         }
     }
