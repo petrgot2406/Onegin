@@ -1,69 +1,99 @@
 Original text:
 
-What is this life if, full of care,
-We have no time to stand and stare.
-
-No time to stand beneath the boughs
-And stare as long as sheep or cows.
-
-No time to see, when woods we pass,
-Where squirrels hide their nuts in grass.
-
-No time to see, in broad daylight,
-Streams full of stars, like skies at night.
-
-No time to turn at Beauty’s glance,
-And watch her feet, how they can dance.
-
-No time to wait till her mouth can
-Enrich that smile her eyes began.
-
-A poor life this if, full of care,
-We have no time to stand and stare.
+1
+Life, believe, is not a dream
+So dark as sages say;
+Oft a little morning rain
+Foretells a pleasant day.
+2
+Sometimes there are clouds of gloom,
+But these are transient all;
+If the shower will make the roses bloom,
+Oh, why lament its fall?
+3
+Rapidly, merrily,
+Life’s sunny hours flit by,
+Gratefully, cheerily,
+Enjoy them as they fly!
+4
+What though Death at times steps in
+And calls our best away?
+What though sorrow seems to win,
+O’er hope, a heavy sway?
+5
+Yet Hope again elastic springs,
+Unconquered, though she fell;
+Still buoyant are her golden wings,
+Still strong to bear us well.
+6
+Manfully, fearlessly,
+The day of trial bear,
+For gloriously, victoriously,
+Can courage quell despair!
 
 Sorted text 1:
 
-And stare as long as sheep or cows.
-And watch her feet, how they can dance.
-
-A poor life this if, full of care,
-Enrich that smile her eyes began.
-
-No time to see, in broad daylight,
-No time to see, when woods we pass,
-
-No time to stand beneath the boughs
-No time to turn at Beauty’s glance,
-
-No time to wait till her mouth can
-Streams full of stars, like skies at night.
-
-We have no time to stand and stare.
-We have no time to stand and stare.
-
-What is this life if, full of care,
-Where squirrels hide their nuts in grass.
+1
+And calls our best away?
+But these are transient all;
+Can courage quell despair!
+Enjoy them as they fly!
+2
+Foretells a pleasant day.
+For gloriously, victoriously,
+Gratefully, cheerily,
+If the shower will make the roses bloom,
+3
+Life, believe, is not a dream
+Life’s sunny hours flit by,
+Manfully, fearlessly,
+O’er hope, a heavy sway?
+4
+Oft a little morning rain
+Oh, why lament its fall?
+Rapidly, merrily,
+So dark as sages say;
+5
+Sometimes there are clouds of gloom,
+Still buoyant are her golden wings,
+Still strong to bear us well.
+The day of trial bear,
+6
+Unconquered, though she fell;
+What though Death at times steps in
+What though sorrow seems to win,
+Yet Hope again elastic springs,
 
 Sorted text 2:
 
-And watch her feet, how they can dance.
-No time to turn at Beauty’s glance,
-
-What is this life if, full of care,
-A poor life this if, full of care,
-
-We have no time to stand and stare.
-We have no time to stand and stare.
-
-No time to wait till her mouth can
-Enrich that smile her eyes began.
-
-No time to stand beneath the boughs
-No time to see, when woods we pass,
-
-Where squirrels hide their nuts in grass.
-And stare as long as sheep or cows.
-
-No time to see, in broad daylight,
-Streams full of stars, like skies at night.
+1
+Oh, why lament its fall?
+But these are transient all;
+Unconquered, though she fell;
+Still strong to bear us well.
+2
+Life, believe, is not a dream
+If the shower will make the roses bloom,
+Sometimes there are clouds of gloom,
+Oft a little morning rain
+3
+What though Death at times steps in
+What though sorrow seems to win,
+The day of trial bear,
+Can courage quell despair!
+4
+Yet Hope again elastic springs,
+Still buoyant are her golden wings,
+Foretells a pleasant day.
+So dark as sages say;
+5
+And calls our best away?
+O’er hope, a heavy sway?
+Life’s sunny hours flit by,
+Enjoy them as they fly!
+6
+Gratefully, cheerily,
+Rapidly, merrily,
+Manfully, fearlessly,
+For gloriously, victoriously,
 

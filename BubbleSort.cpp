@@ -40,6 +40,23 @@ size_t length_of_the_string(char* the_string)
     return counter;
 }
 
+bool IsThereLetters(char* the_string)
+{
+    size_t counter = 0;
+    for (size_t i = 0; i <= length_of_the_string(the_string); i++)
+    {
+        if (IsLetter(the_string[i]))
+        {
+            counter++;
+        }
+    }
+    if (counter == 0)
+    {
+        return false;
+    }
+    return true;
+}
+
 int strcmp(char* string_1, char* string_2)
 {
     assert(string_1 != NULL && string_2 != NULL);
@@ -126,14 +143,14 @@ void Bubble_sort(Text* the_text)
         {
             size_t n1 = 0;
             size_t n2 = 1;
-            while (length_of_the_string(the_text->sorted_text.lines[j + n1]) <= 1 ||
-                   length_of_the_string(the_text->sorted_text.lines[j + n2]) <= 1)
+            while (!IsThereLetters(the_text->sorted_text.lines[j + n1]) ||
+                   !IsThereLetters(the_text->sorted_text.lines[j + n2]))
             {
-                if (length_of_the_string(the_text->sorted_text.lines[j + n1]) <= 1)
+                if (!IsThereLetters(the_text->sorted_text.lines[j + n1]))
                 {
                     n1++;
                 }
-                if (length_of_the_string(the_text->sorted_text.lines[j + n2]) <= 1)
+                if (!IsThereLetters(the_text->sorted_text.lines[j + n2]))
                 {
                     n2++;
                 }
@@ -161,14 +178,14 @@ void Bubble_sort_reverse(Text* the_text)
         {
             size_t n1 = 0;
             size_t n2 = 1;
-            while (length_of_the_string(the_text->sorted_text.lines[j + n1]) <= 1 ||
-                   length_of_the_string(the_text->sorted_text.lines[j + n2]) <= 1)
+            while (!IsThereLetters(the_text->sorted_text.lines[j + n1]) ||
+                   !IsThereLetters(the_text->sorted_text.lines[j + n2]))
             {
-                if (length_of_the_string(the_text->sorted_text.lines[j + n1]) <= 1)
+                if (!IsThereLetters(the_text->sorted_text.lines[j + n1]))
                 {
                     n1++;
                 }
-                if (length_of_the_string(the_text->sorted_text.lines[j + n2]) <= 1)
+                if (!IsThereLetters(the_text->sorted_text.lines[j + n2]))
                 {
                     n2++;
                 }
