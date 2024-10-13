@@ -1,132 +1,108 @@
 Original text:
 
-1
-
-Life, believe, is not a dream
-So dark as sages say;
-Oft a little morning rain
-Foretells a pleasant day.
-
-2
-
-Sometimes there are clouds of gloom,
-But these are transient all;
-If the shower will make the roses bloom,
-Oh, why lament its fall?
-
-3
-
-Rapidly, merrily,
-Life’s sunny hours flit by,
-Gratefully, cheerily,
-Enjoy them as they fly!
-
-4
-
-What though Death at times steps in
-And calls our best away?
-What though sorrow seems to win,
-O’er hope, a heavy sway?
-
-5
-
-Yet Hope again elastic springs,
-Unconquered, though she fell;
-Still buoyant are her golden wings,
-Still strong to bear us well.
-
-6
-
-Manfully, fearlessly,
-The day of trial bear,
-For gloriously, victoriously,
-Can courage quell despair!
+If you can keep your head when all about you
+Are losing theirs and blaming it on you,
+If you can trust yourself when all men doubt you,
+But make allowance for their doubting too;
+If you can wait and not be tired by waiting,
+Or being lied about, don't deal in lies,
+Or being hated don't give way to hating,
+And yet don't look too good, nor talk too wise:
+If you can dream-and not make dreams your master;
+If you can think-and not make thoughts your aim,
+If you can meet with Triumph and Disaster
+And treat those two impostors just the same;
+If you can bear to hear the truth you've spoken
+Twisted by knaves to make a trap for fools,
+Or watch the things you gave your life to, broken,
+And stoop and build 'em up with worn-out tools:
+If you can make one heap of all your winnings
+And risk it on one turn of pitch-and-toss,
+And lose, and start again at your beginnings
+And never breathe a word about your loss;
+If you can force your heart and nerve and sinew
+To serve your turn long after they are gone,
+And so hold on when there is nothing in you
+Except the Will which says to them: 'Hold on!'
+If you can talk with crowds and keep your virtue,
+Or walk with Kings-nor lose the common touch,
+If neither foes nor loving friends can hurt you,
+If all men count with you, but none too much;
+If you can fill the unforgiving minute
+With sixty seconds' worth of distance run,
+Yours is the Earth and everything that's in it,
+And-which is more-you'll be a Man, my son!
+FFFFFFFFFFFFFFFFFFFF
 
 Sorted text 1:
 
-1
-
-And calls our best away?
-But these are transient all;
-Can courage quell despair!
-Enjoy them as they fly!
-
-2
-
-Foretells a pleasant day.
-For gloriously, victoriously,
-Gratefully, cheerily,
-If the shower will make the roses bloom,
-
-3
-
-Life, believe, is not a dream
-Life’s sunny hours flit by,
-Manfully, fearlessly,
-O’er hope, a heavy sway?
-
-4
-
-Oft a little morning rain
-Oh, why lament its fall?
-Rapidly, merrily,
-So dark as sages say;
-
-5
-
-Sometimes there are clouds of gloom,
-Still buoyant are her golden wings,
-Still strong to bear us well.
-The day of trial bear,
-
-6
-
-Unconquered, though she fell;
-What though Death at times steps in
-What though sorrow seems to win,
-Yet Hope again elastic springs,
+And lose, and start again at your beginnings
+And never breathe a word about your loss;
+And risk it on one turn of pitch-and-toss,
+And so hold on when there is nothing in you
+And stoop and build 'em up with worn-out tools:
+And treat those two impostors just the same;
+And-which is more-you'll be a Man, my son!
+And yet don't look too good, nor talk too wise:
+Are losing theirs and blaming it on you,
+But make allowance for their doubting too;
+Except the Will which says to them: 'Hold on!'
+FFFFFFFFFFFFFFFFFFFF
+If all men count with you, but none too much;
+If neither foes nor loving friends can hurt you,
+If you can bear to hear the truth you've spoken
+If you can dream-and not make dreams your master;
+If you can fill the unforgiving minute
+If you can force your heart and nerve and sinew
+If you can keep your head when all about you
+If you can make one heap of all your winnings
+If you can meet with Triumph and Disaster
+If you can talk with crowds and keep your virtue,
+If you can think-and not make thoughts your aim,
+If you can trust yourself when all men doubt you,
+If you can wait and not be tired by waiting,
+Or being hated don't give way to hating,
+Or being lied about, don't deal in lies,
+Or walk with Kings-nor lose the common touch,
+Or watch the things you gave your life to, broken,
+To serve your turn long after they are gone,
+Twisted by knaves to make a trap for fools,
+With sixty seconds' worth of distance run,
+Yours is the Earth and everything that's in it,
 
 Sorted text 2:
 
-1
-
-Oh, why lament its fall?
-But these are transient all;
-Unconquered, though she fell;
-Still strong to bear us well.
-
-2
-
-Life, believe, is not a dream
-If the shower will make the roses bloom,
-Sometimes there are clouds of gloom,
-Oft a little morning rain
-
-3
-
-What though Death at times steps in
-What though sorrow seems to win,
-The day of trial bear,
-Can courage quell despair!
-
-4
-
-Yet Hope again elastic springs,
-Still buoyant are her golden wings,
-Foretells a pleasant day.
-So dark as sages say;
-
-5
-
-And calls our best away?
-O’er hope, a heavy sway?
-Life’s sunny hours flit by,
-Enjoy them as they fly!
-
-6
-
-Gratefully, cheerily,
-Rapidly, merrily,
-Manfully, fearlessly,
-For gloriously, victoriously,
+FFFFFFFFFFFFFFFFFFFF
+And treat those two impostors just the same;
+To serve your turn long after they are gone,
+And yet don't look too good, nor talk too wise:
+If you can fill the unforgiving minute
+If you can talk with crowds and keep your virtue,
+Or being hated don't give way to hating,
+If you can wait and not be tired by waiting,
+If you can think-and not make thoughts your aim,
+If all men count with you, but none too much;
+If you can bear to hear the truth you've spoken
+Or walk with Kings-nor lose the common touch,
+Except the Will which says to them: 'Hold on!'
+Or watch the things you gave your life to, broken,
+And-which is more-you'll be a Man, my son!
+With sixty seconds' worth of distance run,
+But make allowance for their doubting too;
+If you can dream-and not make dreams your master;
+If you can meet with Triumph and Disaster
+Or being lied about, don't deal in lies,
+And lose, and start again at your beginnings
+And stoop and build 'em up with worn-out tools:
+If you can make one heap of all your winnings
+Twisted by knaves to make a trap for fools,
+And never breathe a word about your loss;
+And risk it on one turn of pitch-and-toss,
+Yours is the Earth and everything that's in it,
+And so hold on when there is nothing in you
+If you can keep your head when all about you
+If you can trust yourself when all men doubt you,
+Are losing theirs and blaming it on you,
+If neither foes nor loving friends can hurt you,
+If you can force your heart and nerve and sinew
 

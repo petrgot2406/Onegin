@@ -5,6 +5,8 @@
 
 void Swap_size_t(size_t* n1, size_t* n2);
 void Swap_lines(char** line_1, char** line_2);
+bool IsCapitalLetter(char the_symbol);
+bool IsSmallLetter(char the_symbol);
 bool IsLetter(char the_symbol);
 size_t length_of_the_string(char* the_string);
 size_t num_of_letters(char* the_string);

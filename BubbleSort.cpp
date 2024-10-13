@@ -18,10 +18,27 @@ void Swap_lines(char** string_1, char** string_2)
     *string_2 = temp;
 }
 
+bool IsCapitalLetter(char the_symbol)
+{
+    if (the_symbol >= 'A' && the_symbol <= 'Z')
+    {
+        return true;
+    }
+    return false;
+}
+
+bool IsSmallLetter(char the_symbol)
+{
+    if (the_symbol >= 'a' && the_symbol <= 'z')
+    {
+        return true;
+    }
+    return false;
+}
+
 bool IsLetter(char the_symbol)
 {
-    if ((the_symbol >= 'a' && the_symbol <= 'z') ||
-        (the_symbol >= 'A' && the_symbol <= 'Z'))
+    if (IsCapitalLetter(the_symbol) || IsSmallLetter(the_symbol))
     {
         return true;
     }
@@ -43,7 +60,7 @@ size_t length_of_the_string(char* the_string)
 size_t num_of_letters(char* the_string)
 {
     size_t counter = 0;
-    for (size_t i = 0; i <=  length_of_the_string(the_string); i++)
+    for (size_t i = 0; i <= length_of_the_string(the_string); i++)
     {
         if (IsLetter(the_string[i]))
         {
@@ -76,7 +93,17 @@ int strcmp(char* string_1, char* string_2)
         }
         if (string_1[number_of_symbol_1] != string_2[number_of_symbol_2])
         {
-            if (string_1[number_of_symbol_1] > string_2[number_of_symbol_2])
+            int d_1 = 0;
+            int d_2 = 0;
+            if (IsSmallLetter(string_1[number_of_symbol_1]))
+            {
+                d_1 = 32;
+            }
+            if (IsSmallLetter(string_1[number_of_symbol_2]))
+            {
+                d_2 = 32;
+            }
+            if (string_1[number_of_symbol_1] + d_1 > string_2[number_of_symbol_2] + d_2)
             {
                 return 1;
             }
@@ -113,7 +140,17 @@ int strcmp_reverse(char* string_1, char* string_2)
         }
         if (string_1[number_of_symbol_1] != string_2[number_of_symbol_2])
         {
-            if (string_1[number_of_symbol_1] > string_2[number_of_symbol_2])
+            int d_1 = 0;
+            int d_2 = 0;
+            if (IsSmallLetter(string_1[number_of_symbol_1]))
+            {
+                d_1 = 32;
+            }
+            if (IsSmallLetter(string_1[number_of_symbol_2]))
+            {
+                d_2 = 32;
+            }
+            if (string_1[number_of_symbol_1] + d_1 > string_2[number_of_symbol_2] + d_2)
             {
                 return 1;
             }
