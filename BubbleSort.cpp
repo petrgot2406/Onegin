@@ -97,11 +97,11 @@ int strcmp(char* string_1, char* string_2)
             int d_2 = 0;
             if (IsSmallLetter(string_1[number_of_symbol_1]))
             {
-                d_1 = 32;
+                d_2 = 32;
             }
             if (IsSmallLetter(string_1[number_of_symbol_2]))
             {
-                d_2 = 32;
+                d_1 = 32;
             }
             if (string_1[number_of_symbol_1] + d_1 > string_2[number_of_symbol_2] + d_2)
             {
@@ -144,11 +144,11 @@ int strcmp_reverse(char* string_1, char* string_2)
             int d_2 = 0;
             if (IsSmallLetter(string_1[number_of_symbol_1]))
             {
-                d_1 = 32;
+                d_2 = 32;
             }
             if (IsSmallLetter(string_1[number_of_symbol_2]))
             {
-                d_2 = 32;
+                d_1 = 32;
             }
             if (string_1[number_of_symbol_1] + d_1 > string_2[number_of_symbol_2] + d_2)
             {
